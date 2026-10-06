@@ -1,0 +1,38 @@
+# Local credentials and environments
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+
+# Reserved secret token/state files
+.token*
+.tokens*
+.oauth*
+token.json
+tokens.json
+oauth_token.json
+credentials.json
+*.secret.json
+state.secret.json
+
+# Workflow secrets, local state, and generated assets
+.secrets/
+state/
+data/
+*.preview.html
+.DS_Store
+
+logs/
+
+# Operator-created articles and assets (keep only explicit public fixtures)
+articles/*
+!articles/samsung-ssd-news.json
+!articles/evidence.example.json
+!articles/assets/
+articles/assets/*
+!articles/assets/portable-ssd-speed-path.png
+.vscode/
+work/
+outputs/

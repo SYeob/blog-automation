@@ -1,0 +1,81 @@
+{
+  "id": "2026-10-05-samsung-p9-p7-usb4",
+  "kind": "news",
+  "title": "삼성 P9·P7 USB4 SSD: 최대 4,000MB/s, 내 PC에서도 나올까요?",
+  "category": "IT 소식·분석",
+  "content_html": "<p>삼성이 새 외장 SSD P9·P7의 9월 출시를 알렸습니다. 관심을 끄는 수치는 최대 4,000MB/s의 순차 읽기 속도입니다. 다만 제품만 바꾼다고 모든 PC에서 이 속도가 나오거나 게임 로딩이 두 배 빨라지는 것은 아닙니다. 연결 조건과 작업 종류를 함께 확인해야 합니다.</p>\n<p>2026년 10월 5일 확인한 삼성 공식 발표를 바탕으로, 속도 수치가 의미하는 것과 구매 전에 볼 조건을 정리했습니다. 직접 측정한 리뷰는 아닙니다.</p>\n<h2>삼성 P9·P7, 공식 발표에서 확인된 것은?</h2>\n<p><a href=\"https://news.samsungsemiconductor.com/global/samsung-p9-and-p7-portable-ssds-first-unveiled-at-gamescom-to-launch-in-september/\">9월 23일 출시 안내</a>는 USB4 연결, 최대 4,000MB/s 순차 읽기, 최대 8TB 용량을 새 라인업의 특징으로 소개합니다. 제품별 차이는 <a href=\"https://news.samsungsemiconductor.com/global/samsung-showcases-p9-and-p7-ssds-featuring-usb4-at-gamescom-2026/\">8월 26일 최초 발표</a>에서 더 자세히 설명했습니다.</p>\n<table><thead><tr><th scope=\"col\">항목</th><th scope=\"col\">P9</th><th scope=\"col\">P7</th></tr></thead><tbody>\n<tr><td>연결 규격</td><td>USB4</td><td>USB4</td></tr>\n<tr><td>제품별 속도 설명</td><td>순차 읽기 최대 4,000MB/s, 쓰기 최대 3,800MB/s</td><td>인용한 최초 발표 본문에서 제품별 읽기·쓰기 수치를 별도로 제시하지 않음</td></tr>\n<tr><td>주요 용도 설명</td><td>대용량 RAW·고해상도 영상 작업</td><td>업무·엔터테인먼트·일상 저장</td></tr>\n<tr><td>구매 시 추가 확인</td><td>국내 판매 모델·용량·호스트 연결 조건</td><td>판매 모델의 개별 속도·호환 조건</td></tr>\n</tbody></table>\n<p>라인업 전체를 설명한 최대 수치를 모든 P7 모델의 보장 속도처럼 적용하지 않는 것이 좋습니다. 국내 판매 여부와 실제 가격도 해외 발표만으로 확정하지 않았습니다.</p>\n<h2>최대 4,000MB/s는 무엇이 빨라진다는 뜻일까요?</h2>\n<p>삼성은 비교 대상으로 T9 4TB의 최대 순차 읽기·쓰기 2,000MB/s를 제시합니다. P9의 최대 순차 읽기 수치는 그 두 배입니다. 여기서 순차 속도는 큰 데이터를 연속으로 옮기는 작업을 이해할 때 유용한 지표이며, 모든 사용 경험을 대표하지는 않습니다.</p>\n<p>간단한 계산 예로, 100GB를 100,000MB로 놓고 전송 내내 4,000MB/s가 유지된다면 약 25초, 2,000MB/s라면 약 50초입니다. 파일 처리나 연결 오버헤드를 제외한 계산일 뿐, 실제 복사 시간의 예측이나 측정 결과는 아닙니다.</p>\n<h2>내 PC에서 속도를 내려면 무엇을 확인할까요?</h2>\n<p>삼성은 최대 전송 속도를 동봉 케이블로 내부 시험했으며, 호스트 구성·케이블·사용 환경에 따라 성능이 달라질 수 있다고 명시합니다. 따라서 SSD 사양과 함께 PC 제조사 문서의 포트 규격, 케이블 지원 조건, 복사할 다른 저장장치의 성능을 확인할 필요가 있습니다.</p>\n<p>구매 판단의 관점에서 보면, 대용량 영상이나 백업을 자주 옮기는 사용자는 연결 환경을 먼저 확인한 뒤 속도 차이를 검토할 만합니다. 반면 작은 파일 작업이나 게임 로딩 시간을 기대한다면 해당 작업의 실제 측정 자료가 더 필요합니다. 최대 순차 속도만으로 게임 로딩 개선 폭을 단정할 근거는 없습니다.</p>\n<h2>출시일과 용량을 볼 때 주의할 점</h2>\n<p>9월 23일 공식 안내는 9월 출시를 설명하지만, 한국의 정확한 판매 시작일이나 모든 용량의 입고일을 명시하지 않습니다. 최초 발표도 시장에 따라 용량이 다르고 일부 용량은 나중에 출시될 수 있다고 덧붙였습니다. 구매 전 국내 공식 판매 페이지에서 모델·용량·가격을 다시 확인하는 편이 좋습니다.</p>\n<h2>출처</h2>\n<ul><li><a href=\"https://news.samsungsemiconductor.com/global/samsung-p9-and-p7-portable-ssds-first-unveiled-at-gamescom-to-launch-in-september/\">삼성 반도체 뉴스룸: P9·P7 9월 출시 안내</a> — 2026-09-23</li>\n<li><a href=\"https://news.samsungsemiconductor.com/global/samsung-showcases-p9-and-p7-ssds-featuring-usb4-at-gamescom-2026/\">삼성 반도체 뉴스룸: Gamescom 2026 최초 발표</a> — 2026-08-26, 제품 배경 자료</li></ul>\n<p>확인일: 2026-10-05, Asia/Seoul. 수치는 제조사 발표이며, 독립적인 성능 시험은 수행하지 않았습니다.</p>",
+  "sources": [
+    {
+      "id": "samsung-release",
+      "url": "https://news.samsungsemiconductor.com/global/samsung-p9-and-p7-portable-ssds-first-unveiled-at-gamescom-to-launch-in-september/",
+      "title": "Samsung P9 and P7 Portable SSDs, First Unveiled at Gamescom, To Launch in September",
+      "published_at": "2026-09-23",
+      "retrieved_at": "2026-10-05",
+      "role": "news"
+    },
+    {
+      "id": "samsung-spec",
+      "url": "https://news.samsungsemiconductor.com/global/samsung-showcases-p9-and-p7-ssds-featuring-usb4-at-gamescom-2026/",
+      "title": "Samsung Showcases P9 and P7 SSDs Featuring USB4 at Gamescom 2026",
+      "published_at": "2026-08-26",
+      "retrieved_at": "2026-10-05",
+      "role": "background"
+    }
+  ],
+  "claims": [
+    {
+      "text": "P9·P7은 USB4를 지원하며, 삼성은 9월 출시를 안내했다.",
+      "source_ids": [
+        "samsung-release"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "P9의 순차 읽기 최대 4,000MB/s, 쓰기 최대 3,800MB/s는 제조사 발표 수치다.",
+      "source_ids": [
+        "samsung-spec"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "삼성은 T9 4TB의 순차 읽기·쓰기 최대 2,000MB/s를 비교 대상으로 제시했다.",
+      "source_ids": [
+        "samsung-spec"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "최대 전송 속도는 동봉 케이블의 내부 시험이며 호스트·케이블·사용 환경에 따라 달라진다.",
+      "source_ids": [
+        "samsung-release"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "시장별 용량은 다를 수 있고 일부 용량은 추후 출시될 수 있다.",
+      "source_ids": [
+        "samsung-spec"
+      ],
+      "verification": "verified"
+    }
+  ],
+  "images": [
+    {
+      "path": "assets/portable-ssd-speed-path.png",
+      "author": "Codex — 운영자 요청으로 직접 제작",
+      "license": "OWN",
+      "ownership_note": "도형·텍스트로 직접 제작한 설명용 도식. 외부 이미지·로고·사진 사용 없음.",
+      "commercial_use": true,
+      "checked_at": "2026-10-05",
+      "alt": "외장 SSD, 케이블과 PC 포트, 복사 대상과 작업 조건이 전송 속도에 함께 영향을 주는 경로 도식",
+      "caption": "외장 SSD 연결 경로를 설명하기 위해 직접 만든 도식. 실측 성능 비교가 아닙니다.",
+      "subject": "USB4 외장 SSD 전송 속도의 확인 조건",
+      "subject_verified": true
+    }
+  ],
+  "unresolved": [],
+  "review": {
+    "status": "needs_review",
+    "note": "공개 발행 전 운영자 검토 필요. 국내 판매일·실제 가격·P7 개별 속도는 확인되지 않아 확정하지 않음."
+  }
+}

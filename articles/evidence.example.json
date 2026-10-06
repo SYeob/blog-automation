@@ -1,0 +1,92 @@
+{
+  "id": "2026-10-05-samsung-p9-p7-evidence-example",
+  "title": "삼성 P9·P7 USB4 SSD: 최대 4,000MB/s, 내 PC에서도 나올까요?",
+  "kind": "news",
+  "category": "IT 소식·분석",
+  "sources": [
+    {
+      "id": "samsung-release",
+      "url": "https://news.samsungsemiconductor.com/global/samsung-p9-and-p7-portable-ssds-first-unveiled-at-gamescom-to-launch-in-september/",
+      "title": "Samsung P9 and P7 Portable SSDs, First Unveiled at Gamescom, To Launch in September",
+      "published_at": "2026-09-23",
+      "retrieved_at": "2026-10-05",
+      "role": "news"
+    },
+    {
+      "id": "samsung-spec",
+      "url": "https://news.samsungsemiconductor.com/global/samsung-showcases-p9-and-p7-ssds-featuring-usb4-at-gamescom-2026/",
+      "title": "Samsung Showcases P9 and P7 SSDs Featuring USB4 at Gamescom 2026",
+      "published_at": "2026-08-26",
+      "retrieved_at": "2026-10-05",
+      "role": "background"
+    }
+  ],
+  "claims": [
+    {
+      "text": "P9·P7은 USB4를 지원하며, 삼성은 9월 출시를 안내했다.",
+      "source_ids": [
+        "samsung-release"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "P9의 순차 읽기 최대 4,000MB/s, 쓰기 최대 3,800MB/s는 제조사 발표 수치다.",
+      "source_ids": [
+        "samsung-spec"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "삼성은 T9 4TB의 순차 읽기·쓰기 최대 2,000MB/s를 비교 대상으로 제시했다.",
+      "source_ids": [
+        "samsung-spec"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "최대 전송 속도는 동봉 케이블의 내부 시험이며 호스트·케이블·사용 환경에 따라 달라진다.",
+      "source_ids": [
+        "samsung-release"
+      ],
+      "verification": "verified"
+    },
+    {
+      "text": "시장별 용량은 다를 수 있고 일부 용량은 추후 출시될 수 있다.",
+      "source_ids": [
+        "samsung-spec"
+      ],
+      "verification": "verified"
+    }
+  ],
+  "images": [
+    {
+      "path": "assets/portable-ssd-speed-path.png",
+      "author": "Codex — 운영자 요청으로 직접 제작",
+      "license": "OWN",
+      "ownership_note": "도형·텍스트로 직접 제작한 설명용 도식. 외부 이미지·로고·사진 사용 없음.",
+      "commercial_use": true,
+      "checked_at": "2026-10-05",
+      "alt": "외장 SSD, 케이블과 PC 포트, 복사 대상과 작업 조건이 전송 속도에 함께 영향을 주는 경로 도식",
+      "caption": "외장 SSD 연결 경로를 설명하기 위해 직접 만든 도식. 실측 성능 비교가 아닙니다.",
+      "subject": "USB4 외장 SSD 전송 속도의 확인 조건",
+      "subject_verified": true
+    }
+  ],
+  "unresolved": [],
+  "answer": "삼성 P9의 최대 순차 읽기 속도는 4,000MB/s입니다. 제조사 발표 수치이며, 실제 속도는 PC와 케이블 등 연결 환경에 따라 달라집니다.",
+  "sections": [
+    {
+      "heading": "제품 수치와 연결 조건을 함께 확인하세요",
+      "paragraphs": [
+        "삼성은 P9·P7에 USB4 연결을 적용했다고 밝혔습니다. P9의 최대 순차 읽기·쓰기는 각각 4,000MB/s와 3,800MB/s로 설명했습니다.",
+        "최대 속도는 동봉 케이블을 사용한 내부 시험 결과입니다. PC 제조사 문서의 포트 규격과 사용하는 케이블의 지원 조건을 먼저 확인할 필요가 있습니다."
+      ]
+    },
+    {
+      "heading": "국내 판매 일정은 별도로 확인하세요",
+      "paragraphs": [
+        "삼성의 9월 23일 안내는 9월 출시를 설명합니다. 이 자료만으로 한국의 정확한 판매 시작일과 실제 가격을 확정하지는 않습니다."
+      ]
+    }
+  ]
+}
