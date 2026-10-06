@@ -12,7 +12,7 @@
 
 ## 업로드
 
-아래 명령은 공개 배포본 폴더에서 실행합니다. YOUR_ACCOUNT와 YOUR_REPOSITORY는 실제 값으로 바꾸세요. 현재 제공본은 원격 저장소를 만들거나 push하지 않은 상태입니다.
+아래 명령은 공개 배포본 폴더에서 실행합니다. YOUR_ACCOUNT와 YOUR_REPOSITORY는 실제 값으로 바꾸세요. 새로 만든 빈 저장소에 처음 업로드할 때의 절차입니다.
 
 ```bash
 git init -b main
