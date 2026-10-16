@@ -12,12 +12,27 @@ class AppRunnerTests(unittest.TestCase):
         t=tempfile.TemporaryDirectory();self.addCleanup(t.cleanup);self.root=Path(t.name).resolve()
         (self.root/'articles').mkdir();(self.root/'state').mkdir()
         self.date=dt.datetime(2026,10,5,15,tzinfo=c.KST)
+        (self.root/'automation-policy.json').write_text(json.dumps({'publication_mode':'automatic_publish','weekdays':['MON','WED','FRI']}))
+        root_patch=patch.object(a,'ROOT',self.root)
+        root_patch.start();self.addCleanup(root_patch.stop)
     def test_published_day_skips_collection(self):
         with patch.object(a,'today_id',return_value='it-news-2026-10-05'),patch.object(a,'now',return_value=self.date),patch.object(a,'Store',return_value=Mock(data={'posts':{'it-news-2026-10-05':{'stage':'publish','post_id':28}}})),patch.object(a.news_sources,'collect') as collect:
             self.assertEqual(a.prepare()['action'],'already_published');collect.assert_not_called()
     def test_off_day_skips_without_wordpress(self):
-        with patch.object(a,'now',return_value=dt.datetime(2026,10,6,15,tzinfo=c.KST)),patch.object(a,'read_json',return_value={'weekdays':['MON','WED','FRI']}),patch.object(a,'WordPress') as client:
+        with patch.object(a,'now',return_value=dt.datetime(2026,10,6,15,tzinfo=c.KST)),patch.object(a,'read_json',return_value={'weekdays':['MON','WED','FRI']}),patch.object(a,'Store',return_value=Mock(data={'posts':{}})),patch.object(a,'WordPress') as client:
             self.assertEqual(a.prepare()['action'],'skip');client.assert_not_called()
+    def test_manual_mode_skips_before_state_lock_or_remote_calls(self):
+        (self.root/'automation-policy.json').write_text(json.dumps({'publication_mode':'manual_request'}))
+        with patch.object(a,'Store') as store,patch.object(a,'locked') as lock,patch.object(a,'WordPress') as client:
+            self.assertEqual(a.prepare()['action'],'skip')
+            store.assert_not_called();lock.assert_not_called();client.assert_not_called()
+
+    def test_published_day_does_not_lock_or_revalidate_remote_status(self):
+        record={'posts':{'it-news-2026-10-05':{'stage':'publish','post_id':28}}}
+        with patch.object(a,'today_id',return_value='it-news-2026-10-05'),patch.object(a,'Store',return_value=Mock(data=record)),patch.object(a,'locked') as lock,patch.object(a,'WordPress') as client:
+            self.assertEqual(a.prepare()['action'],'already_published')
+            lock.assert_not_called();client.assert_not_called()
+
     def test_review_hash_tamper_blocks_writes(self):
         draft=self.root/'articles/draft.json';draft.write_text('{}');review=self.root/'articles/review.json';review.write_text(json.dumps({'draft_sha256':'incorrect','publishable':True,'issues':[]}))
         workflow=Mock()

@@ -48,8 +48,8 @@ auth는 브라우저에서 WordPress에 로그인하고 지정한 사이트 접�
 
 원고의 category는 실제 WordPress 카테고리 이름과 정확히 일치해야 합니다. 자동 원고의 기본 이름은 `IT 소식·분석`이며, WordPress 관리자에서 같은 카테고리를 준비하거나 `run_scheduled.build_article`의 이름을 본인의 카테고리로 변경하세요.
 
-## 5. 정책과 앱 자동화
+## 5. 수동 요청 정책
 
-`automation-policy.json`은 매일 발행을 허용하고 한국 시간 날짜를 검사하는 로컬 정책입니다. 이 JSON만 수정해도 앱 예약이 자동 변경되지는 않습니다.
+`automation-policy.json`의 기본 모드는 manual_request / manual_only입니다. 정기 자동화는 등록하지 않으며 사용자 요청에 따라 blog.py 수동 경로로 발행합니다.
 
-Codex에서 이 저장소를 열고 [Codex 사용법](CODEX.md)에 따라 자동화를 등록합니다. `<PROJECT_DIR>`는 본인의 저장소 절대 경로로 바꾸세요. 새 저장소에는 기존 자동화 id나 컴퓨터 경로가 포함되지 않습니다.
+Codex에서 이 저장소를 열고 [Codex 사용법](CODEX.md)에 따라 수동 포스팅을 요청하세요. 루트 AGENTS.md의 마침표 단축 요청도 적용할 수 있습니다. 새 저장소에는 기존 예약 작업이나 인증 정보가 포함되지 않습니다.

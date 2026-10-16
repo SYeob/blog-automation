@@ -12,19 +12,22 @@
   ],
   "posts_per_week": 7,
   "time_of_day": "while_available",
-  "publication_mode": "automatic_publish",
+  "publication_mode": "manual_request",
   "execution_method": "codex_app",
   "no_paid_ai_api": true,
-  "status": "active",
+  "status": "manual_only",
   "maximum_official_sources": 3,
   "maximum_articles_per_run": 1,
-  "check_interval_minutes": 60,
+  "check_interval_minutes": null,
   "editorial_requirements": {
     "headings": "h3 with strong",
     "performance_comparison_table": true,
     "licensed_topic_image": true,
     "focus": "기존 대비 실질적인 변화·성능 비용·사용 조건 분석, 근거 있는 수치만",
-    "featured_image": "first licensed topic image"
+    "featured_image": "first licensed topic image",
+    "natural_prose": true,
+    "avoid_formulaic_personal_usage_heading": true,
+    "style_guide": "BLOG_STYLE_GUIDE.md"
   },
   "layout": {
     "paragraph_bottom_px": 28,
@@ -41,5 +44,12 @@
     "rotate_categories": true,
     "rotate_types": true,
     "recent_posts_limit": 30
+  },
+  "manual_request_shortcut": {
+    "input": ".",
+    "match": "trimmed_exact",
+    "meaning": "주제 하나 선정해서 수동 포스팅해줘",
+    "approved_at": "2026-10-09",
+    "scope": "user_authored_message_in_this_project_chat"
   }
 }

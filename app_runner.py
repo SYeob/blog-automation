@@ -18,7 +18,13 @@ def today_id():
 
 
 def prepare():
+    if read_json(ROOT/'automation-policy.json').get('publication_mode') == 'manual_request':
+        return {'action':'skip','reason':'수동 요청 전용입니다. 정기 자동 발행은 중지되어 있습니다.'}
     article_id=today_id()
+    # A completed day needs only a read: no lock writes or remote revalidation.
+    record=Store().data['posts'].get(article_id,{})
+    if record.get('stage') in {'publish','future'}:
+        return {'action':'already_published','id':article_id,'post_id':record['post_id']}
     policy=read_json(ROOT/'automation-policy.json')
     weekdays=('MON','TUE','WED','THU','FRI','SAT','SUN')
     if weekdays[now().weekday()] not in policy.get('weekdays',[]):

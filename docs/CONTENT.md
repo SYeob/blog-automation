@@ -11,7 +11,7 @@
 | articles/당일ID.json | finalize가 만든 완성 article |
 | state/workflow.json | 서버 글 ID·단계·해시·검토 승인·복구 기록 |
 
-날짜와 ID는 prepare 반환값을 사용합니다. 아래 JSON은 구조 예시이며 PLACEHOLDER 등을 실제 값으로 바꾸어야 합니다. examples/의 원고는 decision=hold로 제공하여 미완성 내용을 발행하지 않게 했습니다.
+현재 수동 모드에서는 요청별 고유 manual-YYYY-MM-DD-topic ID를 사용합니다. 자동 모드를 별도로 사용할 때만 prepare 반환값을 사용합니다. 아래 JSON은 구조 예시이며 PLACEHOLDER 등을 실제 값으로 바꾸어야 합니다. examples/의 원고는 decision=hold로 제공하여 미완성 내용을 발행하지 않게 했습니다.
 
 ## 선정 기록
 
@@ -96,7 +96,7 @@
 }
 ```
 
-허용 license는 OWN, CC0, CC-BY-4.0, PERMISSION입니다. 외부 이미지는 permission_url을 기록하고, CC-BY-4.0/PERMISSION은 attribution도 필요합니다. source_url을 추가할 수 있습니다. Python은 기록 형식을 검사하므로 실제 이용 권한과 피사체 일치는 운영자가 확인해야 합니다. 첫 번째 이미지가 대표 이미지로 지정됩니다.
+허용 license는 OWN, CC0, CC-BY-4.0, PERMISSION입니다. 외부 이미지는 permission_url을 기록하고, CC-BY-4.0/PERMISSION은 attribution도 필요합니다. source_url을 추가할 수 있습니다. Python은 기록 형식을 검사하므로 실제 이용 권한과 피사체 일치는 운영자가 확인해야 합니다. 첫 번째 이미지가 대표 이미지로 지정됩니다. `placement: "featured_only"`를 첫 이미지에 넣으면 대표 이미지로만 사용하고 본문에는 `<!-- blog-image-0 -->`을 넣지 않습니다. 두 번째 본문 도표는 `<!-- blog-image-1 -->`을 사용합니다. 생략 시 기존 본문 배치를 유지합니다.
 
 본문 스타일은 post_layout.py가 적용합니다. 문단 아래 28px, 소제목 위 44px, 이미지·표 최대 620px, 헤더 #dce5ef, 홀수 본문 행 #f6f8fb입니다. WordPress 테마가 별도로 표시하는 대표 이미지 영역의 크기는 본문 이미지 스타일과 별개입니다.
 

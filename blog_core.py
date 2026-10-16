@@ -25,11 +25,13 @@ BASE = 'https://public-api.wordpress.com/rest/v1.1/sites/' + SITE
 KST = ZoneInfo('Asia/Seoul')
 TOKEN_FILE = ROOT / '.secrets' / 'wordpress-token.json'
 STATE_FILE = ROOT / 'state' / 'workflow.json'
-ALLOWED_DOMAINS = {SITE, 'blog.google', 'research.google', 'blogs.microsoft.com',
+ALLOWED_DOMAINS = {SITE, 'www.qualcomm.com', 'deepmind.google', 'support.google.com', 'blog.google', 'research.google', 'blogs.microsoft.com',
                    'news.microsoft.com', 'www.apple.com', 'developer.wordpress.com',
-                   'github.blog', 'blogs.windows.com', 'www.microsoft.com',
+                   'github.blog', 'blogs.windows.com', 'www.microsoft.com', 'learn.microsoft.com', 'www.beatsbydre.com',
+                   'www.hyundai.com', 'www.hyundai.news',  # Hyundai Europe links to this official newsroom.
+                   'www.playstation.com',  # Official PlayStation hardware support.
                    'news.samsungsemiconductor.com', 'news.samsung.com', 'www.samsung.com',
-                   'blog.playstation.com', 'www.nintendo.com', 'www.kioxia.com', 'kr.kioxia.com'}
+                   'blog.playstation.com', 'www.garmin.com', 'www.garmin.com.sg', 'www8.garmin.com', 'www.nvidia.com', 'nvidia.custhelp.com', 'www.nintendo.com', 'www.kioxia.com', 'kr.kioxia.com'}
 
 class WorkflowError(RuntimeError):
     pass
@@ -365,7 +367,12 @@ def validate_article(article, base_dir, check_fresh=True):
         raise WorkflowError('이미지 위치 표시는 실제 이미지 번호와 일치하고 중복되지 않아야 합니다.')
     if len(images) > 3:
         raise WorkflowError('원고당 이미지는 최대 3개입니다.')
-    for image in images:
+    for image_index, image in enumerate(images):
+        placement = image.get('placement', 'body')
+        if placement not in {'body', 'featured_only'}:
+            raise WorkflowError('이미지 placement는 body 또는 featured_only여야 합니다.')
+        if placement == 'featured_only' and (image_index != 0 or '0' in markers):
+            raise WorkflowError('대표 전용 이미지는 첫 번째 항목이며 본문 표시를 사용하지 않습니다.')
         required = ('path', 'author', 'license', 'checked_at', 'alt', 'caption', 'subject')
         if any(not isinstance(image.get(k), str) or not image[k].strip() for k in required):
             raise WorkflowError('이미지 권리 또는 설명 정보가 부족합니다.')
@@ -543,6 +550,8 @@ class Workflow:
                 item = self.media(image, base_dir)
                 if index == 0:
                     featured_media_id = int(item['ID'])
+                if image.get('placement') == 'featured_only':
+                    continue
                 caption = image['caption'] + (' — ' + image['attribution'] if image.get('attribution') else '')
                 width=image.get('display_width')
                 width_attr=(' width="'+str(width)+'"') if width else ''

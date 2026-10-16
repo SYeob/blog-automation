@@ -177,6 +177,24 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn('width="400"',body)
         self.assertNotIn('blog-image-',body)
 
+    def test_featured_only_image_is_not_duplicated_in_body(self):
+        from PIL import Image
+        Image.new('RGB',(50,50),'blue').save(self.base/'cover.png')
+        self.a['images']=[{'path':'cover.png','author':'tester','license':'OWN','ownership_note':'original cover','commercial_use':True,'checked_at':'2026-10-05','alt':'cover','caption':'cover','subject':'SSD','subject_verified':True,'placement':'featured_only'}]
+        self.upload()
+        self.assertEqual(self.api.posts[42]['post_thumbnail']['ID'],90)
+        self.assertNotIn('<img',self.api.posts[42]['content'])
+        self.approve();self.w.publish(self.a,self.base,self.a['id'])
+        self.assertEqual(self.api.posts[42]['status'],'publish')
+
+    def test_featured_only_body_marker_is_blocked_before_write(self):
+        from PIL import Image
+        Image.new('RGB',(50,50),'blue').save(self.base/'cover.png')
+        self.a['images']=[{'path':'cover.png','author':'tester','license':'OWN','ownership_note':'original cover','commercial_use':True,'checked_at':'2026-10-05','alt':'cover','caption':'cover','subject':'SSD','subject_verified':True,'placement':'featured_only'}]
+        self.a['content_html']='<!-- blog-image-0 -->'+self.a['content_html']
+        with self.assertRaisesRegex(c.WorkflowError,'대표 전용'):self.upload()
+        self.assertEqual(self.api.writes,[])
+
     def test_media_rights_and_hash_reuse(self):
         from PIL import Image
         file=self.base/'diagram.png';Image.new('RGB',(50,50),'blue').save(file)
